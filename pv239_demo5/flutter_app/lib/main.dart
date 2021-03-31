@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/bloc/panel_cubit.dart';
 import 'package:flutter_app/main_screen.dart';
-import 'package:flutter_app/model/panel_model.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,8 +16,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: ChangeNotifierProvider(
-          create: (context) => PanelModel(),
+      home: BlocProvider<PanelCubit>(
+          create: (context) => PanelCubit(),
           child: MainScreen()
       ),
     );
